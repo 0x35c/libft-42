@@ -6,13 +6,13 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:15:01 by ulayus            #+#    #+#             */
-/*   Updated: 2022/10/01 00:43:35 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/10/03 19:07:20 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	nb_digits(int n)
+static int	nb_digits(int n)
 {
 	int	count;
 
