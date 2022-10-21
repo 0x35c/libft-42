@@ -6,13 +6,13 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 16:49:04 by ulayus            #+#    #+#             */
-/*   Updated: 2022/10/03 14:05:33 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/10/03 18:41:15 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_start(char const *s1, char const *set)
+static size_t	ft_start(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
@@ -34,7 +34,7 @@ size_t	ft_start(char const *s1, char const *set)
 	return (count);
 }
 
-size_t	ft_end(char const *s1, char const *set)
+static size_t	ft_end(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
