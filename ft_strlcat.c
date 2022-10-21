@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 14:35:19 by ulayus            #+#    #+#             */
-/*   Updated: 2022/10/03 19:19:02 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/10/03 19:25:27 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	lensrc = ft_strlen(src);
 	if (!size)
 		return (lensrc);
-	while (dest[lendest] && lendest < size)
+	while (dst[lendest] && lendest < size)
 		lendest++;
-	if (dest[lendest])
+	if (dst[lendest])
 		return (lensrc + size);
 	while (src[i] && (lendest + i + 1) < size)
 	{
-		dest[lendest + i] = src[i];
+		dst[lendest + i] = src[i];
 		i++;
 	}
-	dest[lendest + i] = 0;
+	dst[lendest + i] = 0;
 	return (lendest + lensrc);
 }
