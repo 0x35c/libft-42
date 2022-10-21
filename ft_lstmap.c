@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:21:25 by ulayus            #+#    #+#             */
-/*   Updated: 2022/10/03 18:13:41 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/10/05 11:02:43 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new;
 	t_list	*begin;
 
-	new = ft_calloc(1, sizeof(t_list));
 	if (!lst || !f)
 		return (0);
+	new = ft_calloc(1, sizeof(t_list));
 	begin = new;
 	while (lst)
 	{
