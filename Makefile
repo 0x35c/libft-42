@@ -6,7 +6,7 @@
 #    By: ulayus <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/30 11:40:22 by ulayus            #+#    #+#              #
-#    Updated: 2022/10/03 14:32:47 by ulayus           ###   ########.fr        #
+#    Updated: 2022/10/03 15:35:16 by ulayus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,10 +38,6 @@ $(NAME): $(OBJ)
 bonus: $(OBJ) $(BOBJ)
 	ar rc $(NAME) $(OBJ) $(BOBJ)
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BSRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ)
-
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
@@ -52,3 +48,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re bonus

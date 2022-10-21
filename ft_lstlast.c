@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:35:42 by ulayus            #+#    #+#             */
-/*   Updated: 2022/10/03 11:45:06 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/10/03 15:28:39 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst)
-		return (0);
 	t_list	*tmp;
 
+	if (!lst)
+		return (0);
 	tmp = lst;
-    while (tmp->next)
-        tmp = tmp->next;
-    return (tmp);
+	while (tmp->next)
+		tmp = tmp->next;
+	return (tmp);
 }	

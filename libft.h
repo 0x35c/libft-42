@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 00:10:23 by ulayus            #+#    #+#             */
-/*   Updated: 2022/10/03 14:33:12 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/10/03 15:29:50 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <stdio.h>
 
 # define ABS(x) (x * ((x > 0) - (x < 0)))
 
