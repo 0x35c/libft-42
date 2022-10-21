@@ -6,34 +6,39 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:08:50 by ulayus            #+#    #+#             */
-/*   Updated: 2022/10/03 14:05:07 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/10/03 17:48:05 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_word(char const *s, char c)
+static size_t	count_word(char const *s, char c)
 {
 	size_t	i;
 	size_t	count;
 
 	i = 0;
 	count = 1;
-	while (s[i] == c)
+	while (s[i] == c && s[i])
 		i++;
-	if (i == ft_strlen(s))
+	if (i + 1 == ft_strlen(s) || i == ft_strlen(s))
 		return (0);
 	while (s[i])
 	{
 		if (s[i] == c)
-			if (s[i + 1] != c && s[i + 1])
-				count++;
+		{
+			while (s[i] == c)
+				i++;
+			if (!s[i])
+				return (count);
+			count++;
+		}
 		i++;
 	}
 	return (count);
 }
 
-size_t	count_char(char const *s, char c, size_t i)
+static size_t	count_char(char const *s, char c, size_t i)
 {
 	size_t	count;
 
@@ -48,7 +53,7 @@ size_t	count_char(char const *s, char c, size_t i)
 	return (count);
 }
 
-size_t	ft_strccpy(const char *s, char *str, char c, size_t j)
+static size_t	ft_strccpy(const char *s, char *str, char c, size_t j)
 {
 	size_t	i;
 
@@ -80,7 +85,7 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	i = 0;
 	j = 0;
-	while (s[i] && j < count_word(s, c) + 1)
+	while (s[i] && (j < count_word(s, c) + 1 && count_word(s, c)))
 	{
 		strs[j] = malloc(count_char(s, c, i) + 1);
 		if (!strs[j])
