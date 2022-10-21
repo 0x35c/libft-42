@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 10:25:32 by ulayus            #+#    #+#             */
-/*   Updated: 2022/10/02 00:12:45 by ulayus           ###   ########.fr       */
+/*   Created: 2022/10/03 14:21:25 by ulayus            #+#    #+#             */
+/*   Updated: 2022/10/03 14:48:56 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (n == -2147483648)
-		write(fd, "-2147483648", 11);
-	else
-	{	
-		if (n < 0)
+	t_list	*new;
+	t_list	*begin;
+
+	new = malloc(sizeof(t_list));
+	if (!lst || !f)
+        return (0);
+	begin = new;
+    while (lst)
+    {
+		new->next = malloc(sizeof(t_list));
+		if (!new->next)
 		{
-			write(fd, "-", 1);
-			n *= -1;
+			ft_lstclear(&begin, del);
+			return (0);
 		}
-		if (n > 9)
-			ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd(n % 10 + 48, fd);
-	}
+		new->content = f(lst->content);
+		lst = lst->next;
+		new = new->next;
+    }
+	return (begin);
 }

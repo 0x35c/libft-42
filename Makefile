@@ -6,7 +6,7 @@
 #    By: ulayus <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/30 11:40:22 by ulayus            #+#    #+#              #
-#    Updated: 2022/10/01 02:17:42 by ulayus           ###   ########.fr        #
+#    Updated: 2022/10/03 14:32:47 by ulayus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,26 +19,34 @@ ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c \
 ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
 ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
+BSRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
+
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
 OBJ = $(SRCS:.c=.o)
 
+BOBJ = $(BSRCS:.c=.o)
+
 all: $(NAME) 
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
+bonus: $(OBJ) $(BOBJ)
+	ar rc $(NAME) $(OBJ) $(BOBJ)
+
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BSRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ)
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BOBJ)
 
 fclean: clean
 	rm -f $(NAME)

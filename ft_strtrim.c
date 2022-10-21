@@ -6,17 +6,17 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 16:49:04 by ulayus            #+#    #+#             */
-/*   Updated: 2022/10/01 01:20:52 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/10/03 14:05:33 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_start(char const *s1, char const *set)
+size_t	ft_start(char const *s1, char const *set)
 {
-	int	i;
-	int	j;
-	int	count;
+	size_t	i;
+	size_t	j;
+	size_t	count;
 
 	i = 0;
 	count = 0;
@@ -34,11 +34,11 @@ int	ft_start(char const *s1, char const *set)
 	return (count);
 }
 
-int	ft_end(char const *s1, char const *set)
+size_t	ft_end(char const *s1, char const *set)
 {
-	int	i;
-	int	j;
-	int	count;
+	size_t	i;
+	size_t	j;
+	size_t	count;
 
 	i = ft_strlen(s1) - 1;
 	count = 0;
@@ -58,9 +58,9 @@ int	ft_end(char const *s1, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		len;
-	int		i;
-	int		start;
+	size_t	len;
+	size_t	i;
+	size_t	start;
 	char	*str;
 
 	if (!s1 || !set)

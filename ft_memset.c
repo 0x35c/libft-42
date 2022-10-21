@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:33:28 by ulayus            #+#    #+#             */
-/*   Updated: 2022/09/30 14:16:26 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/10/02 16:24:10 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memset(void *s, int c, size_t n)
 {
 	char	*str;
 
-	str = s;
+	str = (char *) s;
 	while (n)
 	{
 		*str = c;
