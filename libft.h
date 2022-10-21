@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 00:10:23 by ulayus            #+#    #+#             */
-/*   Updated: 2022/10/03 19:12:12 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/10/04 13:40:45 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-
-# define ABS(x) (x * ((x > 0) - (x < 0)))
 
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
