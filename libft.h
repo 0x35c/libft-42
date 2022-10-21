@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 00:10:23 by ulayus            #+#    #+#             */
-/*   Updated: 2022/10/03 16:58:11 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/10/03 19:12:12 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ size_t	ft_strlen(const char *s);
 int		ft_isprint(int c);
 void	ft_bzero(void *s, unsigned int n);
 char	*ft_itoa(int n);
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *nptr);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
